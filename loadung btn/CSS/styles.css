@@ -1,0 +1,100 @@
+body{
+  padding: 64px;
+}
+
+.message{
+  width: 100px;
+  padding: 8px 16px;
+  background: rgba(175, 216, 26, 1);
+  color: black;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.2);
+  animation: popup 5s forwards;
+  position: fixed;
+  left: 60px;
+  top: 100px;
+  z-index: 5;
+ 
+}
+
+@keyframes popup{
+  0%{
+    transform: translateY(20px);
+    opacity: 0;
+    animation-timing-function: ease-out;
+  }
+  20%,80%{
+    transform:none;
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.btn{
+  width: 24px;
+  height: 12px;
+  padding: 16px 32px;
+  text-align: center;
+  line-height: 10px;
+  background: blue;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow :  3px 6px rgba(0,0,0, 0.6);
+  cursor: pointer;
+  position: fixed;
+  top: 80px;
+  transition: background .5s ;
+  animation: botan 5s forwards;
+  z-index: 1;
+}
+
+.btn:hover{
+  background: skyblue;
+}  
+.btn:active{
+  transform: translateY(3px);
+  box-shadow: none;
+}
+@keyframes botan{
+  0%,99%{
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.loading{
+  width: 80px;
+  height: 80px;
+  border: 8px solid rgba(0, 0, 0, 0.226);
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin1 5s forwards linear;
+  position: fixed;
+  top:80px;
+
+  z-index: 3;
+}
+
+@keyframes spin1 {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  80%{
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(1800deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
